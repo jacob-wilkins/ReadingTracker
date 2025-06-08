@@ -51,6 +51,7 @@ export default function TabLayout() {
           tabBarButtonTestID: 'style-tab',
         }}
       />
+
       <Tabs.Screen
         name="settings"
         options={{
@@ -58,6 +59,16 @@ export default function TabLayout() {
           headerShown: false,
           tabBarIcon: ({ color }) => <SettingsIcon color={color} />,
           tabBarButtonTestID: 'settings-tab',
+        }}
+      />
+
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <SettingsIcon color={color} />,
+          tabBarButtonTestID: 'profile-tab',
         }}
       />
     </Tabs>
