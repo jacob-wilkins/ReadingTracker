@@ -24,11 +24,11 @@ const schema = z.object({
 
 export type FormType = z.infer<typeof schema>;
 
-export type LoginFormProps = {
+export type RegisterFormProps = {
   onSubmit?: SubmitHandler<FormType>;
 };
 
-export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
+export const RegisterForm = ({ onSubmit = () => {} }: RegisterFormProps) => {
   const { handleSubmit, control } = useForm<FormType>({
     resolver: zodResolver(schema),
   });
@@ -45,10 +45,16 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
             testID="form-title"
             className="pb-6 text-center text-4xl font-bold"
           >
-            Sign In
+            Register
           </Text>
         </View>
 
+        <ControlledInput
+          testID="name"
+          control={control}
+          name="name"
+          label="Name"
+        />
         <ControlledInput
           testID="email-input"
           control={control}
@@ -64,15 +70,15 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
           secureTextEntry={true}
         />
         <Button
-          testID="login-button"
-          label="Login"
+          testID="register-button"
+          label="Register"
           onPress={handleSubmit(onSubmit)}
         />
         <Text>
-          Don't have an account?{' '}
-          <Link href="/register">
+          Already have an account?{' '}
+          <Link href="/login">
             <Text style={{ color: '#4F8EF7', textDecorationLine: 'underline' }}>
-              Register here.
+              Login here.
             </Text>
           </Link>
         </Text>

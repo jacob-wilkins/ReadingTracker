@@ -25,7 +25,7 @@ export default function TabLayout() {
   }, [hideSplash, status]);
 
   if (isFirstTime) {
-    return <Redirect href="/onboarding" />;
+    return <Redirect href="/register" />;
   }
   if (status === 'signOut') {
     return <Redirect href="/login" />;
