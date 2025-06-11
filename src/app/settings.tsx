@@ -72,12 +72,10 @@ export default function Settings() {
               onPress={() => {}}
             />
           </ItemsContainer>
-
-          <View className="my-8">
-            <ItemsContainer>
-              <Item text="settings.logout" onPress={signOut} />
-            </ItemsContainer>
-          </View>
+          <ItemsContainer title='settings.profile'>
+            <Item text="settings.edit_profile" onPress={() => {}} />
+            <Item text="settings.logout" onPress={signOut} />
+          </ItemsContainer>
         </View>
       </ScrollView>
     </>

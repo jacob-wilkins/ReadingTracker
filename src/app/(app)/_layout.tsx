@@ -5,7 +5,7 @@ import React, { useCallback, useEffect } from 'react';
 import { Pressable, Text } from '@/components/ui';
 import {
   Feed as FeedIcon,
-  Settings as SettingsIcon,
+  Profile as ProfileIcon,
   Style as StyleIcon,
 } from '@/components/ui/icons';
 import { useAuth, useIsFirstTime } from '@/lib';
@@ -53,21 +53,11 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="settings"
-        options={{
-          title: 'Settings',
-          headerShown: false,
-          tabBarIcon: ({ color }) => <SettingsIcon color={color} />,
-          tabBarButtonTestID: 'settings-tab',
-        }}
-      />
-
-      <Tabs.Screen
         name="profile"
         options={{
           title: 'Profile',
           headerShown: false,
-          tabBarIcon: ({ color }) => <SettingsIcon color={color} />,
+          tabBarIcon: ({ color }) => <ProfileIcon color={color} />, // Use a different icon or import the correct one
           tabBarButtonTestID: 'profile-tab',
         }}
       />
